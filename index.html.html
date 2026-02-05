@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baihaqi Althaf F - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #c62828;
+            --dark-red: #8e0000;
+            --light-red: #ff5f52;
+            --primary-black: #121212;
+            --dark-gray: #1e1e1e;
+            --medium-gray: #2d2d2d;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--light-gray);
+            background-color: var(--primary-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-red);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--light-red);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-red);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(198, 40, 40, 0.3);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--primary-red);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 30px;
+        }
+        
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--light-red);
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Home Section */
+        #home {
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--dark-gray) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+        }
+        
+        .home-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .home-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .home-text h1 {
+            margin-bottom: 10px;
+        }
+        
+        .home-text h2 {
+            text-align: left;
+            font-size: 1.8rem;
+            color: var(--light-red);
+            margin-bottom: 20px;
+        }
+        
+        .home-text h2:after {
+            left: 0;
+            transform: none;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .skill-tag {
+            background-color: var(--medium-gray);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            border-left: 3px solid var(--primary-red);
+        }
+        
+        .home-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+        }
+        
+        .profile-img:hover {
+            transform: translateY(-10px);
+        }
+        
+        /* About Section */
+        #about {
+            background-color: var(--dark-gray);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .experience-list, .values-list {
+            margin-top: 20px;
+        }
+        
+        .experience-item, .value-item {
+            background-color: var(--medium-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-red);
+        }
+        
+        .experience-item h4, .value-item h4 {
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+        
+        /* Skills Section */
+        #skills {
+            background-color: var(--primary-black);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        
+        .hard-skills, .soft-skills {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .skill-item {
+            margin-bottom: 25px;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: var(--medium-gray);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary-red);
+            border-radius: 5px;
+        }
+        
+        /* Portfolio Section */
+        #portfolio {
+            background-color: var(--dark-gray);
+        }
+        
+        .portfolio-item {
+            background-color: var(--medium-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .portfolio-info {
+            padding: 30px;
+        }
+        
+        .portfolio-info h3 {
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background-color: var(--primary-black);
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: var(--medium-gray);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .contact-icon {
+            background-color: var(--primary-red);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-details h4 {
+            margin-bottom: 5px;
+        }
+        
+        .contact-details a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-details a:hover {
+            color: var(--light-red);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+        
+        .footer-logo span {
+            color: var(--primary-red);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-icon {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--light-red);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--medium-gray);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .home-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .home-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+            
+            .home-text h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .skills-list {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark-gray);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav li {
+                margin: 15px 0;
+                text-align: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-fire"></i>
+                Baihaqi<span>Althaf</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Tentang Saya</a></li>
+                    <li><a href="#skills">Keahlian</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container home-content fade-in">
+            <div class="home-text">
+                <h1>Baihaqi Althaf F</h1>
+                <h2>Komunikasi & Kepemimpinan</h2>
+                <p class="tagline">Saya Baihaqi Althaf F, seorang siswa SMA yang memiliki minat pada komunikasi, kepemimpinan, dan penulisan.</p>
+                
+                <div class="skills-list">
+                    <span class="skill-tag">Komunikasi & Bahasa</span>
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">Storytelling & Menulis</span>
+                    <span class="skill-tag">Critical Thinking & Analitis</span>
+                    <span class="skill-tag">Disiplin & Growth Mindset</span>
+                </div>
+                
+                <a href="#portfolio" class="btn">Lihat Portofolio</a>
+                <a href="#contact" class="btn" style="margin-left: 15px; background-color: transparent; border: 2px solid var(--primary-red);">Hubungi Saya</a>
+            </div>
+            
+            <div class="home-image">
+                <img src="https://drive.google.com/uc?id=18Ym3VbRK41-xhuT0F0WV2sidUScPjLZb" alt="Baihaqi Althaf F" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>Tentang Saya</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Latar Belakang & Minat</h3>
+                    <p>Ketertarikan saya pada komunikasi dan kepemimpinan berkembang melalui pengalaman berorganisasi di sekolah, khususnya di English Club. Peran tersebut melatih saya dalam public speaking, penulisan, kerja tim, dan berpikir kritis, serta menumbuhkan minat pada isu sosial dan dunia hukum.</p>
+                    <p>Saya memiliki minat pada komunikasi, kepemimpinan, penulisan, dan isu sosial. Tujuan saya adalah mengembangkan potensi diri dan mempersiapkan karier di bidang hukum, pendidikan, dan pengembangan masyarakat.</p>
+                    
+                    <h3 style="margin-top: 30px;">Pengalaman</h3>
+                    <div class="experience-list">
+                        <div class="experience-item">
+                            <h4>Ketua English Club</h4>
+                            <p>Memimpin kegiatan klub dan mengembangkan program kreatif seperti podcast dan diskusi.</p>
+                        </div>
+                        <div class="experience-item">
+                            <h4>Master of Ceremony (MC) Kegiatan Sekolah</h4>
+                            <p>Membawakan acara sekolah dan melatih public speaking.</p>
+                        </div>
+                        <div class="experience-item">
+                            <h4>Kegiatan Organisasi & Proyek Kreatif</h4>
+                            <p>Terlibat dalam penulisan, konten edukatif, dan kerja tim.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>Nilai & Keunggulan Pribadi</h3>
+                    <div class="values-list">
+                        <div class="value-item">
+                            <h4>Komunikatif</h4>
+                            <p>Mampu menyampaikan ide dengan jelas, baik secara lisan maupun tulisan.</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>Berjiwa Pemimpin</h4>
+                            <p>Bertanggung jawab dan mampu mengoordinasikan tim.</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>Berpikir Kritis</h4>
+                            <p>Menganalisis masalah dari berbagai sudut pandang.</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>Kreatif</h4>
+                            <p>Mengembangkan ide dan program baru.</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>Disiplin & Bertanggung Jawab</h4>
+                            <p>Konsisten dan terbuka terhadap pengembangan diri.</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>Kemauan Belajar Tinggi</h4>
+                            <p>Terbuka terhadap masukan dan terus berusaha mengembangkan diri.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Keahlian</h2>
+            <div class="skills-container">
+                <div class="hard-skills">
+                    <h3>Hard Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Kemampuan Berbahasa Inggris</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Public Speaking & MC</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Penulisan (Artikel, Naskah, Cerpen)</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Dasar Pembuatan Konten</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Pengelolaan Program Organisasi</span>
+                            <span>87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 87%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="soft-skills">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Kepemimpinan & Kerja Tim</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Komunikasi Interpersonal</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Berpikir Kritis & Pemecahan Masalah</span>
+                            <span>86%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 86%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Manajemen Waktu & Tanggung Jawab</span>
+                            <span>89%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 89%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Percaya Diri & Adaptif</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="portfolio-item fade-in">
+                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80" alt="Cerpen Switzerland" class="portfolio-img">
+                <div class="portfolio-info">
+                    <h3>Cerpen "Switzerland"</h3>
+                    <p>Cerpen Switzerland mengisahkan persahabatan dua remaja, Theo dan Lucas, yang tumbuh bersama dalam janji, mimpi, dan kebersamaan, namun perlahan retak oleh jarak, rahasia, dan perpisahan yang tak terelakkan. Cerita ini mengeksplorasi tema kehilangan, janji yang tak terpenuhi, dan proses berdamai dengan perubahan, dibalut dengan konflik emosional yang intens dan suasana melankolis. Switzerland menggambarkan bagaimana cinta dalam persahabatan bisa menjadi kekuatan sekaligus luka terdalam ketika waktu memaksa seseorang untuk pergi.</p>
+                    <a href="https://docs.google.com/document/d/1346-8G4QzNWc3cHbp08wYaiwb5GPzys0/edit?usp=drive_link&ouid=114466918600440540849&rtpof=true&sd=true" target="_blank" class="btn">Baca Cerpen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Kontak</h2>
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:syuki760@gmail.com">syuki760@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/6281218810057" target="_blank">081218810057</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Instagram</h4>
+                            <a href="https://www.instagram.com/baihaqialthaf._?igsh=eXdqcnduc3NwZGZw" target="_blank">@baihaqialthaf._</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-fire"></i> Baihaqi<span>Althaf</span>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.instagram.com/baihaqialthaf._?igsh=eXdqcnduc3NwZGZw" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:syuki760@gmail.com" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://wa.me/6281218810057" target="_blank" class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© Twelve – 2023 | Portfolio Baihaqi Althaf F</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+            
+            // Change icon
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navMenu = document.getElementById('navMenu');
+                navMenu.classList.remove('active');
+                
+                // Reset mobile menu icon
+                const icon = document.querySelector('#mobileMenuBtn i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements to animate on scroll
+        document.querySelectorAll('section > .container').forEach(container => {
+            observer.observe(container);
+        });
+    </script>
+</body>
+</html>
